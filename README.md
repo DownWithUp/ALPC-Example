@@ -1,4 +1,4 @@
-# Easy-ALPC
+# ALPC-Example
 An example of a client and server using Windows' ALPC functions to send and receive data.
 ###
 ## Purpose
