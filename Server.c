@@ -1,7 +1,8 @@
 #include <Windows.h>
 #include <winternl.h>
 #include <stdio.h>
-#include "ntlpcapi.h"
+#include "ntalpcapi.h"
+#pragma comment(lib, "ntdll.lib")
 
 #define MAX_MSG_LEN 0x500
 
@@ -89,7 +90,7 @@ void main()
     HANDLE hThread;
 
     printf("[i] ALPC-Example Server\n");
-    hThread = CreateThread(NULL, 0, &CreatePortAndListen, L"\\RPC Control\\NameOfPort", 0, NULL);
+    hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&CreatePortAndListen, L"\\RPC Control\\NameOfPort", 0, NULL);
     WaitForSingleObject(hThread, INFINITE);
     printf("[!] Shuting down server\n");
     getchar();
