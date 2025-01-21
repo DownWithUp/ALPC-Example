@@ -1,7 +1,8 @@
 #include <Windows.h>
 #include <winternl.h>
 #include <stdio.h>
-#include "ntlpcapi.h"
+#include "ntalpcapi.h"
+#pragma comment(lib, "ntdll.lib")
 
 #define MSG_LEN 0x100
 
